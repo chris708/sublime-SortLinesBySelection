@@ -1,5 +1,8 @@
+import time 
+
 import sublime
 import sublime_plugin
+begin = time.time() 
 
 # The default morph lamda, just returns the input
 _DEFAULT_MORPH = lambda s: s
@@ -72,3 +75,9 @@ class SortLinesBySelection(sublime_plugin.TextCommand):
             selections,
             key=lambda r: morph(self.view.substr(r))
         )
+time.sleep(1) 
+
+end = time.time() 
+  
+
+print(f"Total runtime of the program is {end - begin}") 
